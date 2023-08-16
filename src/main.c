@@ -1,6 +1,3 @@
-// DAN BRACE
-// PONG GAME
-
 // LIBRARIES
 #include <stdio.h>
 #include <windows.h>
@@ -12,38 +9,6 @@
 // HEADER FILES
 #include "../include/structs.h"
 #include "../include/constants.h"
-
-/*
-// Window initialization
-SDL_Window *init() {
-    if (SDL_Init(SDL_INIT_VIDEO) != 0) {
-        fprintf(stderr, "SDL initialization failed: %s\n", SDL_GetError());
-        return NULL;
-    }
-
-    SDL_Window *window = SDL_CreateWindow("Pong Game", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, 0);
-    if (!window) {
-        fprintf(stderr, "Failed to create window: %s\n", SDL_GetError());
-        SDL_Quit();
-        return NULL;
-    }
-
-    return window;
-}
-
-int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
-//int main(int argc, char *argv[]) {
-    SDL_Window *window = init();
-    // Checks for null pointer
-    if (!window) { return 1; }
-
-    game(window);
-
-    return 0;
-}
-*/
-
-//int main(int argc, char* argv[]) {
 
 int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
     // Initialize SDL
@@ -67,6 +32,7 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int n
 
     SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
+    // Runs game loop
     game(window, renderer);
 
     // Clean up and quit
