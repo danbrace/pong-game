@@ -8,4 +8,4 @@
 
 // BALL DIMENSIONS
 #define BALL_SIZE 10
-#define BALL_SPEED 5 // Try to make this variable so that the user can adjust speed
+#define BALL_SPEED 3 // Try to make this variable so that the user can adjust speed

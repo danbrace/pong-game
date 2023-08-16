@@ -15,4 +15,4 @@ void paddleClamp(GameObject *leftPaddle, GameObject *rightPaddle);
 
 void drawGame(SDL_Renderer *renderer, SDL_Rect ballRect, SDL_Rect leftPaddleRect, SDL_Rect rightPaddleRect);
 
-void game(SDL_Window *window);
+void game(SDL_Window *window, SDL_Renderer *renderer);
