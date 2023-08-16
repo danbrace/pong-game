@@ -1,3 +1,4 @@
+/*
 {
     "version": "2.0.0",
     "tasks": [
@@ -8,11 +9,54 @@
             "args": [
                 "-g",                                     // Include debugging information
                 "-std=c11",                               // Use C11 standard (change to c99 if needed)
-                "-I./sdl2/SDL2-2.28.2/x86_64-w64-mingw32/include",        // Include path to SDL headers (relative to workspace)
-                "-L./sdl2/SDL2-2.28.2/x86_64-w64-mingw32/lib",            // Specify the path to the SDL library (relative to workspace)
+                "-o", "pong.exe",                         // Output executable name (with .exe file extension for Windows)
+                "src/main.c",                                  // Your main C source file
+                "src/game.c",
+                "-I/include", // Includes self-made header files
+                "-I/lib/SDL2/include",        // Include path to SDL headers (relative to workspace)
+                "-Llib/SDL2/lib",            // Specify the path to the SDL library (relative to workspace)
                 "-lSDL2",                                 // Link against the SDL2 library
-                "main.c",                                  // Your main C source file
-                "-o", "output.exe"                         // Output executable name (with .exe file extension for Windows)
+                "-mwindows"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
+*/
+
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "SDL2",
+            //"command": "D:\\sdk\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\g++.exe",
+            "command": "gcc",
+            "args": [
+                "-g",
+                "src\\*.c",
+                "-o",
+                "build\\pong.exe",
+                //"I./include",
+                //"-ID:/sdk/sdl2/mingw/x86_64/include",
+                //"-IC:/Users/Dan Brace/Documents/libraries/SDL2-devel-2.28.2-mingw.zip/SDL2-2.28.2/x86_64-w64-mingw32/include",
+                "-I/lib/SDL2/include",
+                //"-LD:/sdk/sdl2/mingw/x86_64/lib",
+                //"-LC:/Users/Dan Brace/Documents/libraries/SDL2-devel-2.28.2-mingw.zip/SDL2-2.28.2/x86_64-w64-mingw32/lib",
+                "-Llib/SDL2/lib",
+                "-lmingw32",
+                //"-lSDL2main",
+                "-lSDL2",
+                "-mwindows"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
             ],
             "group": {
                 "kind": "build",

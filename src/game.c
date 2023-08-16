@@ -3,8 +3,8 @@
 #include "../lib/SDL2/include/SDL2/SDL.h"
 
 // HEADER FILES
-#include <structs.h>
-#include <constants.h>
+#include "../include/structs.h"
+#include "../include/constants.h"
 
 // Clears the screen
 void clearScreen(SDL_Renderer *renderer) {
@@ -101,7 +101,7 @@ void game(SDL_Window *window) {
         SDL_Rect rightPaddleRect = {rightPaddlePtr->x, rightPaddlePtr->y, PADDLE_WIDTH, PADDLE_HEIGHT};
 
         // Updates ball data if there is a collision
-        collisionWall(ballPtr, leftPaddle, rightPaddle);
+        collisionWall(ballPtr);
         collisionPaddle(ballPtr, ballRect, leftPaddleRect, rightPaddleRect);
 
         // TODO: End game if doesn't hit paddle
