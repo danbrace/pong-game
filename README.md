@@ -1,5 +1,5 @@
 # Pong Game
 
-This is a simple Pong game created with C and the SDL2 game engine that I'm developing as a practice project.
+This is a simple Pong game created with C and the SDL2 game engine that I developed as a practice project.
 
-*** NOTE: THIS GAME IS A WORK IN PROGRESS ***
+Note: While this game is mostly finished, I'll make additions to the source code to refine the game and add features.
